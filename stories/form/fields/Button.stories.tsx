@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-
-import { Button } from '../../../form/fields/Button';
+import { Button } from '~/form/fields';
 
 const meta: Meta<typeof Button> = {
   title: 'Componentes/Botón',
