@@ -1,36 +1,38 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { TextField } from '~/form/fields';
+import { TextField } from '~/form/fields/TextField';
 
 const meta: Meta<typeof TextField> = {
-  title: 'Componentes/TextField',
+  title: 'form/fields/TextField',
   component: TextField,
   tags: ['autodocs'],
+  argTypes: {
+    name: { control: 'text' },
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
+    defaultValue: { control: 'text' },
+    type: {
+      control: 'select',
+      options: ['text', 'email', 'password', 'hidden'],
+    },
+    isRequired: { control: 'boolean' },
+    validateEmail: { control: 'boolean' },
+    validatePassword: { control: 'boolean' },
+    regexp: { control: 'object' },
+    regexpErrorLabel: { control: 'text' },
+    minLength: { control: 'number' },
+    maxLength: { control: 'number' },
+    showCharacterIndicator: { control: 'boolean' },
+    additionalInformation: { control: 'text' },
+    disabled: { control: 'boolean' },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof TextField>;
 
-type TemplateProps = React.ComponentProps<typeof TextField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      input: args.defaultValue ?? '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <TextField {...args} name="input" />
-    </FormProvider>
-  );
-};
-
 export const Básico: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'input',
     label: 'Nombre',
     placeholder: 'Escribe tu nombre',
     isRequired: true,
@@ -40,8 +42,8 @@ export const Básico: Story = {
 };
 
 export const EmailValido: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'input',
     label: 'Correo electrónico',
     type: 'email',
     placeholder: 'usuario@ejemplo.com',
@@ -51,8 +53,8 @@ export const EmailValido: Story = {
 };
 
 export const ContraseñaSegura: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'input',
     label: 'Contraseña',
     type: 'password',
     placeholder: '••••••••',
@@ -64,8 +66,8 @@ export const ContraseñaSegura: Story = {
 };
 
 export const ConExpresiónRegular: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'input',
     label: 'Solo letras mayúsculas',
     regexp: /^[A-Z]+$/,
     regexpErrorLabel: 'Solo se permiten letras mayúsculas',

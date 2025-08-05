@@ -1,36 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
 import { SelectField } from '~/form/fields/SelectField';
 
 const meta: Meta<typeof SelectField> = {
-  title: 'Componentes/SelectField',
+  title: 'form/fields/SelectField',
   component: SelectField,
   tags: ['autodocs'],
+  argTypes: {
+    name: { control: 'text' },
+    label: { control: 'text' },
+    isRequired: { control: 'boolean' },
+    options: { control: 'object' },
+    labelClassName: { control: 'text' },
+    selectClassName: { control: 'text' },
+    errorClassName: { control: 'text' },
+    onChange: { action: 'changed' },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof SelectField>;
 
-type TemplateProps = React.ComponentProps<typeof SelectField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      seleccion: '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <SelectField {...args} name="seleccion" />
-    </FormProvider>
-  );
-};
-
 export const ConOpciones: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'seleccion',
     label: 'País',
     isRequired: true,
     options: [
@@ -42,8 +34,8 @@ export const ConOpciones: Story = {
 };
 
 export const SinOpciones: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'seleccion',
     label: 'Opciones vacías',
     isRequired: true,
     options: [],

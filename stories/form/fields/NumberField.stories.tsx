@@ -1,38 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
 import { NumberField } from '~/form/fields';
 
 const meta: Meta<typeof NumberField> = {
-  title: 'Componentes/NumberField',
+  title: 'form/fields/NumberField',
   component: NumberField,
   tags: ['autodocs'],
+  argTypes: {
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
+    numberType: {
+      control: 'select',
+      options: ['float', 'integer'],
+    },
+    isRequired: { control: 'boolean' },
+    defaultValue: { control: 'number' },
+    currency: { control: 'text' },
+    additionalInformation: { control: 'text' },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof NumberField>;
 
-type TemplateProps = React.ComponentProps<typeof NumberField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      amount: args.defaultValue ?? '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <form>
-        <NumberField {...args} name="amount" />
-      </form>
-    </FormProvider>
-  );
-};
-
 export const NúmeroDecimal: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'amount',
     label: 'Monto',
     placeholder: 'Ingresa un número',
     numberType: 'float',
@@ -44,8 +36,8 @@ export const NúmeroDecimal: Story = {
 };
 
 export const NúmeroEntero: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'amount',
     label: 'Cantidad',
     placeholder: 'Solo enteros',
     numberType: 'integer',

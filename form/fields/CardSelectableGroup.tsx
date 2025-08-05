@@ -3,25 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FieldError, useFormContext } from 'react-hook-form';
 
-interface CardOption {
-  value: string;
-  label?: string;
-  isLoadingContent?: boolean;
-  content: React.ReactNode;
-}
-
-interface CardSelectableGroupProps {
-  name: string;
-  options: CardOption[];
-  required?: boolean;
-  groupClassName?: string;
-  cardClassName?: string;
-  errorClassName?: string;
-  optionClassName?: string;
-  requiredMsg?: string;
-  cardSizeX?: number;
-  cardSizeY?: number;
-}
+import { CardSelectableGroupProps } from './types';
 
 export const CardSelectableGroup = ({
   name,

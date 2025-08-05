@@ -1,33 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { Control, FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { Option } from '~/form/fields';
-import { DropdownField } from '~/form/fields/DropdownField';
+import { DropdownField } from '~/form/fields';
+import type { Option } from '~/form/fields/types';
 
 const meta: Meta<typeof DropdownField> = {
-  title: 'Componentes/DropdownField',
+  title: 'form/fields/DropdownField',
   component: DropdownField,
   tags: ['autodocs'],
+  argTypes: {
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
+    isRequired: { control: 'boolean' },
+    isClearable: { control: 'boolean' },
+    additionalInformation: { control: 'text' },
+    options: { control: 'object' },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof DropdownField>;
-
-type TemplateProps = React.ComponentProps<typeof DropdownField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      seleccion: '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <DropdownField {...args} name="seleccion" control={methods.control as unknown as Control<FieldValues>} />
-    </FormProvider>
-  );
-};
 
 const opciones: Option[] = [
   { label: 'Perú', value: 'pe' },
@@ -36,8 +26,8 @@ const opciones: Option[] = [
 ];
 
 export const ConOpciones: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'seleccion',
     label: 'País',
     options: opciones,
     isRequired: true,
@@ -46,33 +36,33 @@ export const ConOpciones: Story = {
 };
 
 export const SinOpciones: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'seleccion',
     label: 'Sin datos disponibles',
     options: [],
-    placeholder: 'No hay opciones',
     isRequired: false,
+    placeholder: 'No hay opciones',
   },
 };
 
 export const Borrable: Story = {
-  render: (args) => <Template {...args} />,
   args: {
-    label: 'País',
+    name: 'seleccion',
+    label: 'País (borrable)',
     options: opciones,
     isRequired: true,
     isClearable: true,
-    placeholder: 'Selecciona una opción y luego de click en la X para borrar',
+    placeholder: 'Selecciona y luego haz click en la X para borrar',
   },
 };
 
 export const ConInformaciónAdicional: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'seleccion',
     label: 'País',
     options: opciones,
     isRequired: true,
     placeholder: 'Selecciona uno',
-    additionalInformation: 'Seleccione su país de residencia actual.',
+    additionalInformation: 'Selecciona tu país de residencia actual.',
   },
 };

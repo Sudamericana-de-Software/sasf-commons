@@ -301,6 +301,26 @@ export interface CreatableTagFieldProps<T extends FieldValues> {
   additionalInformation?: React.ReactNode;
 }
 
+interface CardOption {
+  value: string;
+  label?: string;
+  isLoadingContent?: boolean;
+  content: React.ReactNode;
+}
+
+export interface CardSelectableGroupProps {
+  name: string;
+  options: CardOption[];
+  required?: boolean;
+  groupClassName?: string;
+  cardClassName?: string;
+  errorClassName?: string;
+  optionClassName?: string;
+  requiredMsg?: string;
+  cardSizeX?: number;
+  cardSizeY?: number;
+}
+
 export const currencySymbols = {
   USD: '$',
   EUR: '€',

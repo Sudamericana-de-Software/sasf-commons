@@ -1,36 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
 import { TextAreaField } from '~/form/fields/TextAreaField';
 
 const meta: Meta<typeof TextAreaField> = {
-  title: 'Componentes/TextAreaField',
+  title: 'form/fields/TextAreaField',
   component: TextAreaField,
   tags: ['autodocs'],
+  argTypes: {
+    name: { control: 'text' },
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
+    defaultValue: { control: 'text' },
+    isRequired: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    rows: { control: 'number' },
+    maxLength: { control: 'number' },
+    minLength: { control: 'number' },
+    showCharacterIndicator: { control: 'boolean' },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof TextAreaField>;
 
-type TemplateProps = React.ComponentProps<typeof TextAreaField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      comentario: args.defaultValue ?? '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <TextAreaField {...args} name="comentario" />
-    </FormProvider>
-  );
-};
-
 export const Básico: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'comentario',
     label: 'Comentario',
     placeholder: 'Escribe algo...',
     isRequired: true,
@@ -40,11 +34,11 @@ export const Básico: Story = {
 };
 
 export const ConError: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'comentario',
     label: 'Descripción',
     isRequired: true,
     maxLength: 50,
-    defaultValue: 'Texto muy largo que sobrepasa el límite permitido para mostrar el contador de caracteres',
+    defaultValue: 'Este texto excede el límite de 50 caracteres para demostrar el manejo de errores y el contador vibrante.',
   },
 };

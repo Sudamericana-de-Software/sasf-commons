@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { ImageUploadField } from '~/form/fields/ImageUploadField';
+import { ImageUploadField } from '~/form/fields';
 
 const meta: Meta<typeof ImageUploadField> = {
-  title: 'Componentes/ImageUploadField',
+  title: 'form/fields/ImageUploadField',
   component: ImageUploadField,
   tags: ['autodocs'],
 };
@@ -12,27 +10,9 @@ const meta: Meta<typeof ImageUploadField> = {
 export default meta;
 type Story = StoryObj<typeof ImageUploadField>;
 
-type TemplateProps = React.ComponentProps<typeof ImageUploadField>;
-
-const Template = (args: TemplateProps) => {
-  const methods = useForm({
-    defaultValues: {
-      imagen: '',
-    },
-  });
-
-  return (
-    <FormProvider {...methods}>
-      <form>
-        <ImageUploadField {...args} name="imagen" />
-      </form>
-    </FormProvider>
-  );
-};
-
 export const Básico: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'imagen',
     label: 'Sube tu foto',
     isRequired: true,
     placeholder: 'Haz clic o arrastra una imagen',
@@ -45,8 +25,8 @@ export const Básico: Story = {
 };
 
 export const ConImagenPredefinida: Story = {
-  render: (args) => <Template {...args} />,
   args: {
+    name: 'imagen',
     label: 'Logo actual',
     isRequired: false,
     defaultSrc: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png',
