@@ -29,6 +29,7 @@ sasf-commons/
 ├── guard/             # Componentes que manejan la autorización de páginas
 ├── provider/          # Contextos globales de la aplicación
 ├── store/             # Almacén global con Redux
+├── stories/           # Historias de Storybook para documentación visual de los componentes
 └── utils/             # Pantallas útiles y funciones reutilizables
 ```
 
@@ -55,7 +56,10 @@ Contextos globales de la aplicación que encapsulan funcionalidades y permiten l
 #### **7. store/**
 El almacén global de la aplicación basado en **Redux**, centralizando el estado global y sus acciones.
 
-#### **8. utils/**
+#### **8. stories/**
+Contiene las historias de **Storybook** para documentar y visualizar de forma aislada los componentes de la librería. Cada archivo `.stories.tsx` permite explorar distintos estados y variantes visuales de los componentes reutilizables durante el desarrollo.
+
+#### **9. utils/**
 Incluye pantallas útiles, funciones de utilidad y módulos `.ts` que contienen lógica reutilizable para diferentes propósitos dentro de la aplicación.
 
 ---

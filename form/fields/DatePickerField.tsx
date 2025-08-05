@@ -61,7 +61,7 @@ export const DatePickerField = <T extends FieldValues>({
               error={error?.message}
               inputClassName={inputClassName}
               placeholderText={placeholderText}
-              onChange={(_date: Date | null ) => {
+              onChange={(_date: Date | null) => {
                 fieldOnChange(_date);
                 if (onChange && _date) onChange(_date);
               }}
