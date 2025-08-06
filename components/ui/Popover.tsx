@@ -35,15 +35,38 @@ export const Popover: React.FC<PopoverProps> = ({ trigger, children, width = '40
   }, []);
 
   useEffect(() => {
-    if (isOpen && triggerRef.current) {
-      const triggerRect = triggerRef.current.getBoundingClientRect();
-      const popoverPosition = {
-        top: position === 'bottom' ? triggerRect.bottom + window.scrollY : triggerRect.top - window.scrollY,
-        left: triggerRect.left + window.scrollX,
-      };
-      setPopoverStyles(popoverPosition);
+    if (!isOpen || !triggerRef.current) return;
+
+    const triggerRect = triggerRef.current.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const scrollX = window.scrollX;
+    const popW = parseInt(width, 10);
+    const popH = parseInt(height, 10);
+
+    let topVal = 0;
+    let leftVal = 0;
+
+    switch (position) {
+      case 'bottom':
+        topVal = triggerRect.bottom + scrollY;
+        leftVal = triggerRect.left + scrollX;
+        break;
+      case 'top':
+        topVal = triggerRect.top + scrollY - popH;
+        leftVal = triggerRect.left + scrollX;
+        break;
+      case 'left':
+        topVal = triggerRect.top + scrollY;
+        leftVal = triggerRect.left + scrollX - popW;
+        break;
+      case 'right':
+        topVal = triggerRect.top + scrollY;
+        leftVal = triggerRect.right + scrollX;
+        break;
     }
-  }, [isOpen, position]);
+
+    setPopoverStyles({ top: topVal, left: leftVal });
+  }, [isOpen, position, width, height]);
 
   return (
     <>

@@ -95,6 +95,7 @@ const meta: Meta<typeof StepFormExample> = {
       description: 'Sólo muestra el botón Guardar en el último paso',
       table: { category: 'Props' },
     },
+
     // Events
     onSubmit: {
       description: 'Se dispara al guardar cambios',
@@ -110,7 +111,7 @@ export const Básico: Story = {
     className: '',
     canSave: true,
     onlySaveInLastStep: false,
-    onSubmit: () => { },
+    onSubmit: () => {},
   },
 };
 
@@ -119,6 +120,6 @@ export const SóloGuardarAlFinal: Story = {
     className: '',
     canSave: true,
     onlySaveInLastStep: true,
-    onSubmit: () => { },
+    onSubmit: () => {},
   },
 };

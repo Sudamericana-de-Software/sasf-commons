@@ -21,9 +21,9 @@ const tooltipVariants = {
     icon: faCheckCircle,
   },
   danger: {
-    background: 'bg-[var(--danger)]',
-    borderColor: 'border-[var(--danger-dark)]',
-    textcolor: 'text-[var(--danger-dark)]',
+    background: 'bg-[var(--error)]',
+    borderColor: 'border-[var(--error-dark)]',
+    textcolor: 'text-[var(--error-dark)]',
     icon: faTimesCircle,
   },
   warning: {
@@ -57,7 +57,8 @@ export const CustomTooltip: FC<TooltipProps> = ({ text, iconClassName, bgColor, 
       onMouseEnter={!isMobile ? () => setTooltipVisible(true) : undefined}
       onMouseLeave={!isMobile ? () => setTooltipVisible(false) : undefined}
     >
-      <FontAwesomeIcon icon={icon || faInfoCircle} className={`text-[var(--secondaryalt)] cursor-pointer ${iconClassName}`} />
+      {/* Usamos variantIcon como fallback si no se pasa icon */}
+      <FontAwesomeIcon icon={icon || variantIcon} className={`text-[var(--secondaryalt)] cursor-pointer ${iconClassName}`} />
 
       {/* Tooltip visual */}
       {(isTooltipVisible || !isMobile) && (

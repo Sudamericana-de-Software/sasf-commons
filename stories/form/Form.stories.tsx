@@ -26,6 +26,7 @@ const meta: Meta<typeof Form> = {
   component: Form,
   tags: ['autodocs'],
   argTypes: {
+    // Props
     defaultValues: {
       control: 'object',
       description: 'Valores iniciales del formulario',
@@ -44,6 +45,7 @@ const meta: Meta<typeof Form> = {
       description: 'Se dispara al hacer submit',
       table: { category: 'Events' },
     },
+
     // ocultamos props internas
     methods: { table: { disable: true } },
     children: { table: { disable: true } },
