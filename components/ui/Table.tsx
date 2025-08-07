@@ -17,7 +17,7 @@ import {
 
 import { Loader } from './Loader';
 
-interface TableProps<T extends object> {
+export interface TableProps<T extends object> {
   data: T[];
   columns: ColumnDef<T>[];
   searchable?: boolean;

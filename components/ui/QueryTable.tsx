@@ -25,7 +25,7 @@ import { useDebounce, useMediaQuery, useQuery } from '~/hooks';
 import { Loader } from './Loader';
 import { Toggle } from './Toggle';
 
-interface TableProps<T extends object> {
+export interface QueryTableProps<T extends object> {
   columns: ColumnDef<T>[];
   fetchUrl: string;
   searchUrl?: string;
@@ -149,7 +149,7 @@ export const QueryTable = <T extends object>({
   autoFetch = true,
   errorMessage = 'Ocurrió un error al obtener los datos.',
   errorClassName = 'text-red-500',
-}: TableProps<T>) => {
+}: QueryTableProps<T>) => {
   const [pagination, setPagination] = useState({
     pageIndex: defaultPage,
     pageSize: defaultSize,
