@@ -18,7 +18,7 @@ const dialogWrapper: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof ToastContainer> = {
-  title: 'components/ui/Toast (useToast)',
+  title: 'components/ui/Toast',
   component: ToastContainer,
   tags: ['autodocs'],
   decorators: [dialogWrapper],

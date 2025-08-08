@@ -2,7 +2,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 import { Table } from '~/components/ui';
 
-interface RecursiveTableProps<T extends object> {
+export interface RecursiveTableProps<T extends object> {
   data: T[];
   columns: ColumnDef<T>[];
   childKey: keyof T;
