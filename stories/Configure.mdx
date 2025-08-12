@@ -117,28 +117,28 @@ export const RightArrow = () => <svg
 
   <div className="grid gap-6 md-cols-2">
     <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
-      <img src="https://www.northware.mx/wp-content/uploads/2023/10/northware-la-importancia-del-desarrollo-de-software-en-la-actualidad.png" alt="Desarrollo de software" className="h-28 w-full object-cover rounded-lg" />
+      <img src="https://www.northware.mx/wp-content/uploads/2023/10/northware-la-importancia-del-desarrollo-de-software-en-la-actualidad.png" alt="Desarrollo de software" className="card-img-fixed-sm" />
       <h4 className="sb-section-item-heading text-[var(--font)]">Desarrollo de software</h4>
       <p className="sb-section-item-paragraph text-[var(--font)]">
         Desde aplicaciones web empresariales hasta sistemas complejo, con tecnologías de última generación.
       </p>
     </div>
     <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
-      <img src="https://sesitdigital.com/wp-content/uploads/2021/02/3.png" alt="Fábrica de software" className="h-28 w-full object-cover rounded-lg" />
+      <img src="https://sesitdigital.com/wp-content/uploads/2021/02/3.png" alt="Fábrica de software" className="card-img-fixed-sm" />
       <h4 className="sb-section-item-heading text-[var(--font)]">Fábrica de software</h4>
       <p className="sb-section-item-paragraph text-[var(--font)]">
         Enfoque ágil y escalable para gestionar proyectos con eficiencia y calidad.
       </p>
     </div>
     <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
-      <img src="https://img.freepik.com/vector-gratis/fondo-degradado-ui-ux_23-2149065783.jpg" alt="Aplicaciones Móviles" className="h-28 w-full object-cover rounded-lg" />
+      <img src="https://img.freepik.com/vector-gratis/fondo-degradado-ui-ux_23-2149065783.jpg" alt="Aplicaciones Móviles" className="card-img-fixed-sm" />
       <h4 className="sb-section-item-heading text-[var(--font)]">Aplicaciones móviles</h4>
       <p className="sb-section-item-paragraph text-[var(--font)]">
         Nativas y multiplataforma, con experiencias móviles excepcionales.
       </p>
     </div>
     <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
-      <img src="https://www.destinosinteligentes.es/wp-content/uploads/2022/05/shutterstock_2029235963-scaled.jpg" alt="Soluciones tecnológicas" className="h-28 w-full object-cover rounded-lg" />
+      <img src="https://www.destinosinteligentes.es/wp-content/uploads/2022/05/shutterstock_2029235963-scaled.jpg" alt="Soluciones tecnológicas" className="card-img-fixed-sm" />
       <h4 className="sb-section-item-heading text-[var(--font)]">Soluciones tecnológicas</h4>
       <p className="sb-section-item-paragraph text-[var(--font)]">
         Automatización, analítica y optimización de procesos para tu productividad.
@@ -249,6 +249,15 @@ export const RightArrow = () => <svg
     object-fit: cover;
     border-radius: 8px;
     object-position: center;
+  }
+
+  .card-img-fixed-sm {
+    display: block;
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
   }
 
   /* ===== Estilos existentes ===== */
