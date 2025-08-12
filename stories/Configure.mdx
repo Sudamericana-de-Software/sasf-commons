@@ -34,10 +34,12 @@ export const RightArrow = () => <svg
 <Meta title="SASF • Acerca de / Introducción" />
 
 {/* HERO */}
-<div className="sb-container relative overflow-hidden rounded-xl bg-[var(--secondaryalt)]/50 hero-pad">
+<div className="sb-container relative overflow-hidden rounded-xl hero-pad">
   <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondaryalt)]/60 to-transparent pointer-events-none" />
   <div className="relative grid gap-4">
-    <img src="https://sasf.net/logo.svg" alt="Sudamericana de Software — SASF" className="h-10" />
+    <a href="https://sasf.net/es.html" target="_blank" rel="noopener noreferrer">
+      <img src="https://sasf.net/logo.svg" alt="Sudamericana de Software — SASF" className="h-10" />
+    </a>
     <h1 className="m0 text-2xl md:text-3xl font-bold text-[var(--font)]">Conectando innovación con tecnología</h1>
     <p className="max-w-3xl text-[var(--font)]">
       Somos <b>Sudamericana de Software S.A.</b>, una empresa dedicada a desarrollar y
@@ -173,10 +175,14 @@ export const RightArrow = () => <svg
       </div>
       <h4 className="font-semibold text-[var(--font)]">Correo electrónico</h4>
       <p className="text-[var(--font)]">info@sasf.net</p>
-      <a href="mailto:info@sasf.net" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
-        Enviar correo
-        <span>→</span>
-      </a>
+<a
+  href="https://mail.google.com/mail/?view=cm&to=info@sasf.net&su=Consulta&body=Hola,%20buen%20día%20SASF..."
+  target="_blank" rel="noopener noreferrer"
+  className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]"
+>
+  Enviar con Gmail →
+</a>
+
     </div>
 
     {/* Teléfono / WhatsApp */}
@@ -188,8 +194,7 @@ export const RightArrow = () => <svg
       <h4 className="font-semibold text-[var(--font)]">Escríbenos directamente</h4>
       <p className="text-[var(--font)]">(+593) 985094331</p>
       <a href="https://wa.me/593985094331" target="_blank" rel="noreferrer" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
-        Abrir WhatsApp
-        <span>→</span>
+        Abrir WhatsApp →
       </a>
     </div>
 
@@ -202,8 +207,7 @@ export const RightArrow = () => <svg
       <h4 className="font-semibold text-[var(--font)]">Instagram</h4>
       <p className="text-[var(--font)]">@sasfec</p>
       <a href="https://instagram.com/sasfec" target="_blank" rel="noreferrer" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
-        Ver perfil
-        <span>→</span>
+        Ver perfil →
       </a>
     </div>
   </div>
@@ -232,9 +236,12 @@ export const RightArrow = () => <svg
 <style>
   {`
   /* ===== Utilidades nativas que reemplazan p-*, m-* y md:grid-cols-* ===== */
-  .hero-pad { padding: 24px; }
+  .hero-pad {
+    padding: 24px;
+    background-color: color-mix(in srgb, var(--secondaryalt) 50%, transparent);
+ }
   @media (min-width: 768px) {
-    .hero-pad { padding: 40px; }
+    .hero-pad { padding: 30px; }
     .md-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .md-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
