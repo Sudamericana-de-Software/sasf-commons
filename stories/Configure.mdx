@@ -31,334 +31,248 @@ export const RightArrow = () => <svg
   <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
 </svg>
 
-<Meta title="Configure your project" />
+<Meta title="SASF • Acerca de / Introducción" />
 
+{/* HERO */}
+<div className="sb-container relative overflow-hidden rounded-xl bg-[var(--secondaryalt)]/50 hero-pad">
+  <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondaryalt)]/60 to-transparent pointer-events-none" />
+  <div className="relative grid gap-4">
+    <img src="https://sasf.net/logo.svg" alt="Sudamericana de Software — SASF" className="h-10" />
+    <h1 className="m0 text-2xl md:text-3xl font-bold text-[var(--font)]">Conectando innovación con tecnología</h1>
+    <p className="max-w-3xl text-[var(--font)]">
+      Somos <b>Sudamericana de Software S.A.</b>, una empresa dedicada a desarrollar y
+      proveer soluciones de TI ajustadas a las necesidades de cada cliente. Este
+      Storybook documenta nuestros componentes, hooks, guards y utilidades de la
+      librería que usamos en proyectos reales.
+    </p>
+  </div>
+</div>
+
+{/* QUIÉNES SOMOS */}
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Configure your project
-
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+  <div className="sb-section-title mb-4n text-[var(--font)]">
+    # ¿Quiénes somos?
   </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=react"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+  <p className="mb-6n text-[var(--font)]">
+    Somos una empresa dedicada a desarrollar y proveer soluciones de tecnología de la información ajustadas a las necesidades de cada cliente. Contamos con un recurso humano altamente especializado y con experiencia en sectores industrial, público, comercial y financiero.
+  </p>
+
+  <div className="grid gap-6 md-cols-3">
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Theming} alt="Tecnología del futuro" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Tecnología del futuro</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Adoptamos tecnologías modernas y buenas prácticas para que tus productos evolucionen con el mercado.
+      </p>
     </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=react#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Docs} alt="Misión" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Misión</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Proveer herramientas y servicios tecnológicos que se conviertan en pilares del éxito de nuestros clientes.
+      </p>
     </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Share} alt="Visión" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Visión</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Ser líderes en soluciones y servicios TI a nivel local e internacional, gracias al profesionalismo de nuestros colaboradores.
+      </p>
     </div>
   </div>
 </div>
+
+{/* VALORES */}
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with Storybook
-
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
+  <div className="sb-section-title mb-4n text-[var(--font)]">
+  # Nuestros valores
   </div>
-
-  <div className="sb-section">
-    <div className="sb-features-grid">
-      <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=react#publish-storybook-with-chromatic"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
-        <a
-          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=react#embed-storybook-in-figma-with-the-plugin"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
-        <a
-          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
-        <a
-          href="https://storybook.js.org/docs/configure/theming/?renderer=react"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        href="https://storybook.js.org/addons/"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
+  <div className="flex flex-wrap gap-2">
+    {[
+      "Honestidad",
+      "Respeto",
+      "Humildad",
+      "Responsabilidad",
+      "Compromiso",
+      "Lealtad",
+      "Equidad",
+    ].map((v) => (
+      <span key={v} className="inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--bg)] px-3n py-1n text-sm text-[var(--font)]">
+        {v}
+      </span>
+    ))}
   </div>
 </div>
 
-<div className="sb-section sb-socials">
-    <div className="sb-section-item">
-      <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
+{/* POR QUÉ ELEGIRNOS */}
+<div className="sb-container">
+  <div className="sb-section-title mb-3n text-[var(--font)]">
+  # ¿Por qué elegirnos?
+  </div>
+  <p className="text-[var(--font)]">
+    Nos diferenciamos por nuestra capacidad para adaptarnos a las necesidades específicas de cada cliente, ofreciendo un enfoque personalizado en cada proyecto. Cada solución es diseñada para cumplir con los más altos estándares de calidad y eficiencia.
+  </p>
+</div>
 
-      <a
-        href="https://github.com/storybookjs/storybook"
-        target="_blank"
-      >Star on GitHub<RightArrow /></a>
+{/* SERVICIOS */}
+<div className="sb-container">
+  <div className="sb-section-title mb-4n text-[var(--font)]">
+    # Nuestras soluciones tecnológicas
+    <p className="mt-3n text-base text-[var(--font)]">
+      Aportamos valor con servicios personalizados que impulsan tu futuro.
+    </p>
+  </div>
+
+  <div className="grid gap-6 md-cols-2">
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Docs} alt="Desarrollo de Software" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Desarrollo de Software</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        De aplicaciones web empresariales a sistemas complejos, con tecnologías de última generación.
+      </p>
     </div>
-    <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Testing} alt="Fábrica de Software" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Fábrica de Software</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Enfoque ágil y escalable para gestionar proyectos con eficiencia y calidad.
+      </p>
+    </div>
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Share} alt="Aplicaciones Móviles" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Aplicaciones Móviles</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Nativas y multiplataforma, con experiencias móviles excepcionales.
+      </p>
+    </div>
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <img src={Theming} alt="Soluciones Tecnológicas" className="h-28 w-full object-cover rounded-lg" />
+      <h4 className="sb-section-item-heading text-[var(--font)]">Soluciones Tecnológicas</h4>
+      <p className="sb-section-item-paragraph text-[var(--font)]">
+        Automatización, analítica y optimización de procesos para tu productividad.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <a
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
+{/* CONTACTO DIRECTO */}
+<div className="sb-container">
+  <div className="sb-section-title mb-4n text-[var(--font)]">
+    # Contacto directo
+    <p className="mt-3n text-[var(--font)]">
+      En <b>Sudamericana de Software S.A.</b>, estamos listos para atender tus consultas y brindarte soluciones a la medida.
+    </p>
+  </div>
+
+  <div className="grid gap-6 md-cols-3">
+    {/* Email */}
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <div className="mb-3n inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--secondaryalt)]">
+        {/* mail icon */}
+        <svg width="18" height="18" viewBox="0 0 24 24" className="text-[var(--font)]"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v.4l10 6l10-6V6a2 2 0 0 0-2-2m0 4.75l-8 4.8l-8-4.8V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z"/></svg>
       </div>
+      <h4 className="font-semibold text-[var(--font)]">Correo electrónico</h4>
+      <p className="text-[var(--font)]">info@sasf.net</p>
+      <a href="mailto:info@sasf.net" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
+        Enviar correo
+        <span>→</span>
+      </a>
     </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
 
-        <a
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
+    {/* Teléfono / WhatsApp */}
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <div className="mb-3n inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--secondaryalt)]">
+        {/* phone icon */}
+        <svg width="18" height="18" viewBox="0 0 24 24" className="text-[var(--font)]"><path fill="currentColor" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1 .24l-1.6 1.6a15.1 15.1 0 0 1-6.7-6.7l1.6-1.6a1 1 0 0 0 .24-1A12.9 12.9 0 0 1 8.5 4H6a1 1 0 0 0-1 1c0 8.28 6.72 15 15 15a1 1 0 0 0 1-1v-2.5a1 1 0 0 0-1-1"/></svg>
       </div>
+      <h4 className="font-semibold text-[var(--font)]">Escríbenos directamente</h4>
+      <p className="text-[var(--font)]">(+593) 985094331</p>
+      <a href="https://wa.me/593985094331" target="_blank" rel="noreferrer" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
+        Abrir WhatsApp
+        <span>→</span>
+      </a>
     </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
 
-      <a
-          href="https://storybook.js.org/tutorials/"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
+    {/* Instagram */}
+    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5n shadow-sm">
+      <div className="mb-3n inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--secondaryalt)]">
+        {/* instagram icon */}
+        <svg width="18" height="18" viewBox="0 0 24 24" className="text-[var(--font)]"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12A4.5 4.5 0 0 1 12 7.5M12 9a3 3 0 1 0 3 3a3 3 0 0 0-3-3m5.75-2.5a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17.75 6.5"/></svg>
+      </div>
+      <h4 className="font-semibold text-[var(--font)]">Instagram</h4>
+      <p className="text-[var(--font)]">@sasfec</p>
+      <a href="https://instagram.com/sasfec" target="_blank" rel="noreferrer" className="mt-2n inline-flex items-center gap-1 font-semibold text-[var(--info)] hover:text-[var(--hover)]">
+        Ver perfil
+        <span>→</span>
+      </a>
     </div>
+  </div>
+</div>
+
+{/* ESTAMOS AQUÍ */}
+<div className="sb-container">
+  <div className="sb-section-title mb-4n text-[var(--font)]">
+  # Estamos aquí para ti
+  </div>
+   <div className="sb-addon">
+      <div className="rounded-xl border border-[var(--border)] p-5n shadow-sm">
+        <p className="sb-section-item-paragraph text-[var(--font)]">
+          Av. Francisco de Orellana, Edificio Blue Towers, Guayaquil - Ecuador
+        </p>
+        <p className="sb-section-item-paragraph text-[var(--font)]">
+          Lunes a Viernes 09:00 a 18:00
+        </p>
+      </div>
+      <div className="sb-addon-img">
+        <img src={Theming} alt="Transformación digital" />
+      </div>
+  </div>
 </div>
 
 <style>
   {`
-  .sb-container {
-    margin-bottom: 48px;
+  /* ===== Utilidades nativas que reemplazan p-*, m-* y md:grid-cols-* ===== */
+  .hero-pad { padding: 24px; }
+  @media (min-width: 768px) {
+    .hero-pad { padding: 40px; }
+    .md-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .md-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
+  .p-5n { padding: 20px; }
+  .px-3n { padding-left: 12px; padding-right: 12px; }
+  .py-1n { padding-top: 4px; padding-bottom: 4px; }
 
-  .sb-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
+  .m0 { margin: 0; }
+  .mb-4n { margin-bottom: 16px; }
+  .mb-6n { margin-bottom: 24px; }
+  .mb-3n { margin-bottom: 12px; }
+  .mt-3n { margin-top: 12px; }
+  .mt-2n { margin-top: 8px; }
 
-  img {
-    object-fit: cover;
-  }
+  /* ===== Estilos existentes ===== */
+  .sb-container { margin-bottom:30px; color: var(--font); }
+  img { object-fit:cover; }
+  .sb-section-title { color: var(--font); }
 
-  .sb-section-title {
-    margin-bottom: 32px;
-  }
-
-  .sb-section a:not(h1 a, h2 a, h3 a) {
-    font-size: 14px;
-  }
-
-  .sb-section-item, .sb-grid-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sb-section-item-heading {
-    padding-top: 20px !important;
-    padding-bottom: 5px !important;
-    margin: 0 !important;
-  }
-  .sb-section-item-paragraph {
-    margin: 0;
-    padding-bottom: 10px;
-  }
-
-  .sb-chevron {
-    margin-left: 5px;
-  }
-
-  .sb-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px 20px;
-  }
-
-  .sb-socials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .sb-socials p {
-    margin-bottom: 10px;
-  }
-
-  .sb-explore-image {
-    max-height: 32px;
-    align-self: flex-start;
-  }
+  .sb-section-item-heading { padding-top:16px!important; padding-bottom:6px!important; margin:0!important; color: var(--font); }
+  .sb-section-item-paragraph { margin:0; padding-bottom:10px; color: var(--font); }
 
   .sb-addon {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: #EEF3F8;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #EEF3F8;
-    height: 180px;
-    margin-bottom: 48px;
-    overflow: hidden;
+    width:100%; display:flex; align-items:center; position:relative;
+    background-color: var(--secondaryalt);
+    border-radius:12px; border:1px solid var(--border);
+    height:180px; margin-bottom:48px; overflow:hidden;
   }
-
-  .sb-addon-text {
-    padding-left: 48px;
-    max-width: 240px;
-  }
-
-  .sb-addon-text h4 {
-    padding-top: 0px;
-  }
-
-  .sb-addon-img {
-    position: absolute;
-    left: 345px;
-    top: 0;
-    height: 100%;
-    width: 200%;
-    overflow: hidden;
-  }
-
-  .sb-addon-img img {
-    width: 650px;
-    transform: rotate(-15deg);
-    margin-left: 40px;
-    margin-top: -72px;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
-    backface-visibility: hidden;
-  }
-
-  @media screen and (max-width: 800px) {
-    .sb-addon-img {
-      left: 300px;
-    }
-  }
+  .sb-addon-text { padding-left:48px; max-width:340px; color: var(--font); }
+  .sb-addon-text h4 { padding-top:0px; margin-bottom:6px; }
+  .sb-addon-img { position:absolute; left:500px; top:0; height:100%; width:200%; overflow:hidden; }
+  .sb-addon-img img { width:650px; transform:rotate(-15deg); margin-left:40px; margin-top:-72px; box-shadow:0 0 1px rgba(255,255,255,0); backface-visibility:hidden; }
 
   @media screen and (max-width: 600px) {
-    .sb-section {
-      flex-direction: column;
-    }
-
-    .sb-features-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    .sb-socials {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sb-addon {
-      height: 280px;
-      align-items: flex-start;
-      padding-top: 32px;
-      overflow: hidden;
-    }
-
-    .sb-addon-text {
-      padding-left: 24px;
-    }
-
-    .sb-addon-img {
-      right: 0;
-      left: 0;
-      top: 130px;
-      bottom: 0;
-      overflow: hidden;
-      height: auto;
-      width: 124%;
-    }
-
-    .sb-addon-img img {
-      width: 1200px;
-      transform: rotate(-12deg);
-      margin-left: 0;
-      margin-top: 48px;
-      margin-bottom: -40px;
-      margin-left: -24px;
-    }
+    .sb-addon { height:280px; align-items:flex-start; padding-top:32px; overflow:hidden; }
+    .sb-addon-text { padding-left:24px; }
+    .sb-addon-img { right:0; left:0; top:130px; bottom:0; overflow:hidden; height:auto; width:124%; }
+    .sb-addon-img img { width:1200px; transform:rotate(-12deg); margin-top:48px; margin-bottom:-40px; margin-left:-24px; }
   }
   `}
 </style>
